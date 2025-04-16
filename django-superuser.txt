@@ -1,0 +1,5 @@
+django-superuser
+
+user name: admin
+email: vassiliki.liakopoulou@gmail.com
+password: Baudelaire78

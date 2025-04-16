@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Félix Fénéon — Nouvelles en trois lignes</title>
+    <style>
+    	.feneon-frame {
+  border: 1px solid #333;
+  padding: 100px 60px;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 1200px;
+  height: 85vh;
+  box-sizing: border-box;
+}
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            text-align: center;
+            margin-top: 60px;
+        }
+        img {
+            width: 150px;
+            margin: 20px auto;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+        .box-container {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .box {
+            padding: 20px;
+            border: 1px solid #aaa;
+            width: 200px;
+            cursor: pointer;
+        }
+       .box:hover {
+  transform: scale(1.03) translateY(1px);
+  border-color: #2c2c2c;
+  background-color: #2c2c2c;
+  color: white;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="feneon-frame">
+    <h1>Félix Fénéon — Nouvelles en trois lignes</h1>
+<img src="{% static 'feneon/feneon_portrait.png' %}" alt="Portrait de Félix Fénéon" style="width: 150px; margin: 20px auto;">
+
+
+
+
+    <div class="box-container">
+        <div class="box">Explore Texts</div>
+        <div class="box">Map of Places</div>
+        <div class="box">About Fénéon</div>
+    </div>
+</div>
+
+<audio id="hoverSound" src="{% static 'feneon/typewriter-hover.mp3' %}"></audio>
+<script>
+  const boxes = document.querySelectorAll('.box');
+  const hoverSound = document.getElementById('hoverSound');
+
+  boxes.forEach(box => {
+    box.addEventListener('mouseenter', () => {
+      hoverSound.currentTime = 0;  // rewind to start
+      hoverSound.play();
+    });
+  });
+</script>
+
+</body>
+</html>
